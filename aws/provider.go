@@ -485,6 +485,7 @@ func Provider() *schema.Provider {
 			"aws_cloudfront_public_key":                               resourceAwsCloudFrontPublicKey(),
 			"aws_cloudtrail":                                          resourceAwsCloudTrail(),
 			"aws_cloudwatch_event_bus":                                resourceAwsCloudWatchEventBus(),
+			"aws_cloudwatch_event_bus_policy":                         resourceAwsCloudWatchEventBusPolicy(),
 			"aws_cloudwatch_event_permission":                         resourceAwsCloudWatchEventPermission(),
 			"aws_cloudwatch_event_rule":                               resourceAwsCloudWatchEventRule(),
 			"aws_cloudwatch_event_target":                             resourceAwsCloudWatchEventTarget(),
