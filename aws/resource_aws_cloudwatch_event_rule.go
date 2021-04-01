@@ -46,6 +46,7 @@ func resourceAwsCloudWatchEventRule() *schema.Resource {
 			"name_prefix": {
 				Type:          schema.TypeString,
 				Optional:      true,
+				Computed:      true,
 				ForceNew:      true,
 				ConflictsWith: []string{"name"},
 				ValidateFunc:  validateCloudWatchEventRuleName,
@@ -172,7 +173,7 @@ func resourceAwsCloudWatchEventRuleRead(d *schema.ResourceData, meta interface{}
 	}
 
 	d.Set("name", out.Name)
-	d.Set("name_prefix", aws.StringValue(naming.NamePrefixFromName(aws.StringValue(out.Name))))
+	d.Set("name_prefix", naming.NamePrefixFromName(aws.StringValue(out.Name)))
 	d.Set("role_arn", out.RoleArn)
 	d.Set("schedule_expression", out.ScheduleExpression)
 
